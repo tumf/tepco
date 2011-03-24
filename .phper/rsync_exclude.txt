@@ -1,0 +1,4 @@
+# rsync exclude
+.git
+CVS
+.svn
