@@ -5,3 +5,6 @@ _demo:
     resource: "@AcmeDemoBundle/Controller/DemoController.php"
     type:     annotation
     prefix:   /_demo
+_configurator:
+    resource: "@SymfonyWebConfiguratorBundle/Resources/config/routing/configurator.xml"
+    prefix:   /_configurator
