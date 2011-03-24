@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{% block body %}
+<data>
+  <banner>{{data.banner}}</banner>
+  <capcity>{{data.capacity}}</capacity>
+  <trend>
+    {% for time,line in data.trend %}
+    <time unixtime="{{time}}">
+      <today>{{line.today}}</today>
+      <yesterday>{{line.yesterday}}</yesterday>
+    </time>
+    {% endfor %}
+  </trend>
+</data>
+{% endblock %}

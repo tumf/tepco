@@ -1,10 +1,15 @@
-_welcome:
-    resource: "@AcmeDemoBundle/Controller/WelcomeController.php"
-    type:     annotation
-_demo:
-    resource: "@AcmeDemoBundle/Controller/DemoController.php"
-    type:     annotation
-    prefix:   /_demo
-_configurator:
-    resource: "@SymfonyWebConfiguratorBundle/Resources/config/routing/configurator.xml"
-    prefix:   /_configurator
+#_welcome:
+#    resource: "@AcmeDemoBundle/Controller/WelcomeController.php"
+#    type:     annotation
+
+homepage:
+  pattern: /
+  defaults: { _controller: TumfTepcoBundle:Default:index }
+
+data:
+  pattern: /current.{_format}
+  defaults: { _controller: TumfTepcoBundle:Data:index,_format:html }
+  requirements:
+    _format: html|json|xml
+    
+

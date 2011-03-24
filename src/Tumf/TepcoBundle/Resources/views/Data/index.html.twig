@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<h1>{{data.banner}}</h1>
+<dl>
+  <dt>
+    本日のピーク時供給力
+  </dt>
+  <dd>
+    {{data.capacity}}万kW
+  </dd>
+</dl>
+  
+<table>
+  <tr>
+    <th>
+      時間
+    </th>
+    <th>
+      当日実績(万kW)
+    </th>
+    <th>
+      前日実績(万kW)
+    </th>
+  </tr>
+{% for time,line in data.trend %}
+<tr>
+  <th> {{time|date("Y/m/d H時")}} </th>
+  <td> {{line.today}} </td>
+  <td> {{line.yesterday}} </td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

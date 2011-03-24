@@ -94,6 +94,7 @@ class FilesystemLoader implements \Twig_LoaderInterface
         }
 
         if (false === $file || null === $file) {
+          
             throw new \Twig_Error_Loader(sprintf('Unable to find template "%s".', json_encode($name)), 0, null, $previous);
         }
 

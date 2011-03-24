@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<h1>東京電力の電力使用状況: JSON/XML</h1>
+
+<ul>
+  <li><a href="/current.json">JSON形式</a>(http://tepco.phper.jp/current.json)</li>
+  <li><a href="/current.xml">XML形式</a>(http://tepco.phper.jp/current.xml)</li>
+</ul>
+
+<p>
+  <a href="http://www.tepco.co.jp/forecast/index-j.html" target="_blank">東京電力の使用状況グラフ</a>
+  電力の使用状況のデータを取得して、JSON/XML形式に変換しています。
+</p>
+
+<ul>
+  <li>無保証です</li>
+  <li>データの権利帰属などは上記の<a href="http://www.tepco.co.jp/forecast/index-j.html" target="_blank">東京電力の使用状況グラフ</a>サイトに準じます。権利者より要求があれば直ちにこのサービスは終了します。</li>
+  <li>なんかあったら@<a href="http://twitter.com/#!/tumf">tumf</a>迄ご連絡ください。</li>
+  <li>ソースコードは<a href="http://github.com/tumf/tepco" target="_blank">GitHub</a>にあるので勝手にフォークして使ってください。pullリクエスト歓迎です。</li>
+</ul>
+
+
+{% endblock %}

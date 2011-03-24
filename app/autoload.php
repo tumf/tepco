@@ -16,10 +16,13 @@ $loader->registerNamespaces(array(
     'Zend\\Log'                      => __DIR__.'/../vendor/zend-log',
     'Assetic'                        => __DIR__.'/../vendor/assetic/src',
     'Acme'                           => __DIR__.'/../src',
+    'Tumf'                           => __DIR__.'/../src',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
     'Swift_'           => __DIR__.'/../vendor/swiftmailer/lib/classes',
+    'XML_'                            => __DIR__.'/../vendor/pear',
 ));
 $loader->register();
+set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.'/../vendor/pear');

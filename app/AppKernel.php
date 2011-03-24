@@ -15,13 +15,14 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Tumf\TepcoBundle\TumfTepcoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Symfony\Bundle\WebConfiguratorBundle\SymfonyWebConfiguratorBundle();
+            // $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
         }
-        $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
 
         return $bundles;
     }
