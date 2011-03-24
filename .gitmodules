@@ -1,0 +1,3 @@
+[submodule "src/Bundle/ZendCacheBundle"]
+	path = src/Bundle/ZendCacheBundle
+	url = git://github.com/knplabs/ZendCacheBundle.git

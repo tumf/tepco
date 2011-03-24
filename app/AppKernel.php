@@ -16,6 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Tumf\TepcoBundle\TumfTepcoBundle(),
+            new Bundle\ZendCacheBundle\ZendCacheBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -23,7 +24,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebConfiguratorBundle\SymfonyWebConfiguratorBundle();
             // $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
         }
-
+        
         return $bundles;
     }
 

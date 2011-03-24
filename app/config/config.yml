@@ -46,3 +46,16 @@ swiftmailer:
     host:       %mailer_host%
     username:   %mailer_user%
     password:   %mailer_password%
+    
+zend_cache:
+  templates:
+    external:
+      frontend:
+        name: Core
+        options:
+          lifetime: 7200
+          automatic_serialization: true
+      backend:
+        name: File
+        options:
+          cache_dir: %kernel.root_dir%/cache/%kernel.environment%

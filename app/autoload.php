@@ -17,12 +17,19 @@ $loader->registerNamespaces(array(
     'Assetic'                        => __DIR__.'/../vendor/assetic/src',
     'Acme'                           => __DIR__.'/../src',
     'Tumf'                           => __DIR__.'/../src',
+    'Bundle\\ZendCacheBundle'        => __DIR__.'/../src',
 ));
+
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
     'Swift_'           => __DIR__.'/../vendor/swiftmailer/lib/classes',
-    'XML_'                            => __DIR__.'/../vendor/pear',
+    'Zend_Cache_'                            => __DIR__.'/../vendor/zend/library/Zend/Cache',
 ));
 $loader->register();
-set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.'/../vendor/pear');
+
+// @todo: 何故かこんな事やらないとうまいくいかない＞＜
+set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__.'/../vendor/zend/library');
+require_once(__DIR__.'/../vendor/zend/library/Zend/Cache/Manager.php');
+
+set_include_path(get_include_path() . PATH_SEPARATOR.__DIR__.'/../vendor/pear');
