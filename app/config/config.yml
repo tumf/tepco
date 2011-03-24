@@ -53,7 +53,7 @@ zend_cache:
       frontend:
         name: Core
         options:
-          lifetime: 7200
+          lifetime: 300
           automatic_serialization: true
       backend:
         name: File
