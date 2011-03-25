@@ -6,7 +6,7 @@
   <timestamp>{{data.timestamp}}</timestamp>
   <trend>
     {% for time,line in data.trend %}
-    <time unixtime="{{time}}">
+    <time at="{{time}}">
       <today>{{line.today}}</today>
       <yesterday>{{line.yesterday}}</yesterday>
     </time>
