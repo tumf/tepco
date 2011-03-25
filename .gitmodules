@@ -1,3 +1,0 @@
-[submodule "src/Acme/SymfonyanBundle"]
-	path = src/Acme/SymfonyanBundle
-	url = git://github.com/brtriver/SymfonyanBundle.git
