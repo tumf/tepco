@@ -8,10 +8,8 @@ class DataController extends Controller
 {
   public function indexAction($_format)
   {
-
     $cache = $this->container->get('zend.cache_manager')->getCache('external');
     $data = $cache->load('data');
-    
     if (!$data) {
       $capacity = null;
       $html = file_get_contents("http://www.tepco.co.jp/en/forecast/html/index-e.html");
@@ -33,7 +31,7 @@ class DataController extends Controller
           $r = array();
           $r["today"]= (int)$d[2];
           $r["yesterday"]= (int)$d[3];
-          $trend[strtotime($d[0]." ".$d[1])] = $r;
+          $trend[date('c',strtotime($d[0]." ".$d[1]))] = $r;
         }
       }
       $data = array(
@@ -42,7 +40,8 @@ class DataController extends Controller
                     'banner'=>$banner,
                     'trend'=>$trend,
                     );
-      $data["timestamp"] = date('U');
+      $data["timestamp"] = date('c');
+      $data["version"] = 1;
       $cache->save($data, 'data');
     }
     return $this->render("TumfTepcoBundle:Data:index.${_format}.twig",array('data' => $data));
