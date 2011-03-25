@@ -10,3 +10,6 @@
 [submodule "vendor/gherkin"]
 	path = vendor/gherkin
 	url = git://github.com/Behat/Gherkin.git
+[submodule "vendor/behat"]
+	path = vendor/behat
+	url = git://github.com/Behat/Behat.git
