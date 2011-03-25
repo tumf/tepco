@@ -59,3 +59,5 @@ zend_cache:
         name: File
         options:
           cache_dir: %kernel.root_dir%/cache/%kernel.environment%
+          
+behat: ~

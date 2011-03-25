@@ -6,7 +6,7 @@
 	url = git://github.com/tumf/zend.git
 [submodule "vendor/bundles/Behat/BehatBundle"]
 	path = vendor/bundles/Behat/BehatBundle
-	url = git://github.com/Behat/BehatBundle.git
+	url = git://github.com/Behat/BehatBundle.git 
 [submodule "vendor/gherkin"]
 	path = vendor/gherkin
 	url = git://github.com/Behat/Gherkin.git

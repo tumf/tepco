@@ -23,6 +23,7 @@ class AppKernel extends Kernel
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Symfony\Bundle\WebConfiguratorBundle\SymfonyWebConfiguratorBundle();
+            $bundles[] = new Behat\BehatBundle\BehatBundle();
             // $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
         }
         
