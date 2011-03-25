@@ -1,67 +1,38 @@
-Symfony Standard Edition
-========================
+JSON/XML形式の東京電力の電力使用状況
+================================
 
-What's inside?
---------------
+概要
+----
 
-Symfony Standard Edition comes pre-configured with the following bundles:
+[JSON/XML形式の東京電力の電力使用状況β](http://tepco.phper.jp)のソースコードです。
 
- * FrameworkBundle
- * SensioFrameworkExtraBundle
- * DoctrineBundle
- * TwigBundle
- * SwiftmailerBundle
- * ZendBundle
- * AsseticBundle
- * WebProfilerBundle (in dev/test env)
- * SymfonyWebConfiguratorBundle (in dev/test env)
- * AcmeDemoBundle (in dev/test env)
+インストール
+----------
 
-Installation from an Archive
-----------------------------
+[phper.jp](http://phper.jp)を使ったインストールは下記のようになります。
 
-If you have downloaded an archive, unpack it somewhere under your web server
-root directory.
+    git clone git://github.com/tumf/tepco.git
+    cd tepco
+    phper create
+    phper servers:add
+    git push phper master
+    phper open
 
-If you have downloaded an archive without the vendors, run the
-`bin/vendors.sh` script (`git` must be installed on your machine). If you
-don't have git, download the version with the vendors included.
+JSONサンプル
+-----------
 
-Installation from Git
----------------------
-
-Run the following scripts:
-
- * `bin/vendors.sh`
- * `bin/build_bootstrap.php`
- * `app/console assets:install web/`
-
-Configuration
--------------
-
-Check that everything is working fine by going to the `config.php` page in a
-browser and follow the instructions.
-
-The distribution is configured with the following defaults:
-
- * Twig is the only configured template engine;
- * Doctrine ORM/DBAL is configured;
- * Swiftmailer is configured;
- * Annotations for everything are enabled.
-
-A default bundle, `AcmeDemoBundle`, shows you Symfony2 in action. It's only
-available in the `dev` environment. After playing with it, you can remove it
-by deleting the `src/Acme` directory and removing the routing entry in
-`app/config/routing_dev.yml`.
-
-Configure the distribution by editing `app/config/parameters.ini` or by
-accessing `/web/config.php` in a browser.
-
-A simple controller is configured at `/hello/{name}`. Access it via
-`web/app_dev.php/_demo/hello/Fabien`.
-
-If you want to use the CLI, a console application is available at
-`app/console`. Check first that your PHP is correctly configured for the CLI
-by running `app/check.php`.
-
-Enjoy!
+    {"capacity":3850,
+    "banner":"2011\/3\/25 9:30 UPDATE",
+    "trend":{
+      "2011-03-25T00:00:00+09:00":{"today":2990,"yesterday":2920},
+      "2011-03-25T01:00:00+09:00":{"today":2850,"yesterday":2780},
+      "2011-03-25T02:00:00+09:00":{"today":2770,"yesterday":2690},
+      "2011-03-25T03:00:00+09:00":{"today":2710,"yesterday":2630},
+      "2011-03-25T04:00:00+09:00":{"today":2700,"yesterday":2610},
+      "2011-03-25T05:00:00+09:00":{"today":2830,"yesterday":2750},
+      "2011-03-25T06:00:00+09:00":{"today":3100,"yesterday":3060},
+      "2011-03-25T07:00:00+09:00":{"today":3350,"yesterday":3290},
+      （中略)
+      "timestamp":"2011-03-25T10:15:49+09:00","version":1
+    }
+    
