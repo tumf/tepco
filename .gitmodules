@@ -1,6 +1,3 @@
 [submodule "src/Acme/SymfonyanBundle"]
 	path = src/Acme/SymfonyanBundle
 	url = git://github.com/brtriver/SymfonyanBundle.git
-[submodule "vendor/zend"]
-	path = vendor/zend
-	url = git://github.com/tumf/zend.git
