@@ -1,13 +1,4 @@
 <?php
-
-/**
- * Define your steps here with:
- *
- *     $steps->Given('/REGEX/', function($world) {
- *         // do something or throw exception
- *     });
- */
-
 class TestBrowser extends \Symfony\Bundle\FrameworkBundle\Test\WebTestCase
 {
   protected function createKernel(array $options = array())
@@ -27,15 +18,19 @@ $steps->Given('/^ブラウザを利用する$/',function($world){
 
 $steps->When('/^"([^"]*)"にアクセスする$/', function($world, $url) {
     $world->page = $world->agent->request('GET',$url);
-    ///$page->filter('');
-    //$browser = new TestBrowser;
-    //$client = $browser->createClient();
-    //$agent = $client->request('GET',$url);
-    //throw new \Behat\Behat\Exception\Pending();
 });
 
 $steps->Then('/^"([^"]*)"が(\d+)回"([^"]*)"タグ内に見つかる$/', function($world,$word,$count,$tag) {
     assertEquals($world->page->filter("{$tag}:contains('{$word}')")->count(),$count);
 });
 
+$steps->Then('/^json形式が返ってくる$/', function($world) {
+    $result = json_decode($world->agent->getResponse()->getContent());
+    assert($result);
+});
 
+$steps->Then('/^xml形式が返ってくる$/', function($world) {
+    $doc = new DOMDocument();
+    $result = $doc->loadXML($world->agent->getResponse()->getContent());
+    assert($result);
+});
