@@ -10,6 +10,7 @@ class DataController extends Controller
   {
     $cache = $this->container->get('zend.cache_manager')->getCache('external');
     $data = $cache->load('data');
+    $data = null;
     if (!$data) {
       $capacity = null;
       /*
@@ -32,8 +33,7 @@ class DataController extends Controller
       $trend = array();
     
       foreach($lines as $line){
-        echo $line;
-        $d = explode(",",$line);
+            $d = explode(",",$line);
         if (count($d) > 1) {
           $r = array();
           $r["today"]= (int)$d[2];
