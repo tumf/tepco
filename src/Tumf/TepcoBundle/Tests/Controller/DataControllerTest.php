@@ -1,8 +1,17 @@
 <?php
-namespace Sensio\HelloBundle\Tests\Controller;
+/**
+ */
+
+namespace Tumf\TepcoBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * Test of DataController
+ * @package tumf
+ * @subpackage tepco
+ * @author Yoshihiro Takahara <y.takahara@gmail.com>
+ */
 class DataControllerTest extends WebTestCase
 {
     public function testIndex()

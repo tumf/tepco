@@ -97,6 +97,9 @@
     <exec executable="phpdoc">
       <arg line="-d ${source} -t ${basedir}/build/api -i ${ignore}" />
     </exec>
+    <exec executable="touch">
+      <arg line="${basedir}/build/api/index.html" />
+    </exec>
   </target>
 
   <target name="phpcb"
