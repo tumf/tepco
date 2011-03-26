@@ -28,9 +28,11 @@ class DataController extends Controller
       $capacity = (int) $caps[0];
       
       $headers = explode(",",array_shift($lines));
+      array_shift($lines);
       $trend = array();
     
       foreach($lines as $line){
+        echo $line;
         $d = explode(",",$line);
         if (count($d) > 1) {
           $r = array();
