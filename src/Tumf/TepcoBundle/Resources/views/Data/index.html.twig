@@ -12,24 +12,28 @@
 </dl>
   
 <table>
-  <tr>
-    <th>
-      時間
-    </th>
-    <th>
-      当日実績(万kW)
-    </th>
-    <th>
-      前日実績(万kW)
-    </th>
-  </tr>
-{% for time,line in data.trend %}
-<tr>
-  <th> {{time|date("Y/m/d H時")}} </th>
-  <td> {{line.today}} </td>
-  <td> {{line.yesterday}} </td>
-</tr>
-{% endfor %}
+  <thead>
+    <tr>
+      <th>
+        時間
+      </th>
+      <th>
+        当日実績(万kW)
+      </th>
+      <th>
+        前日実績(万kW)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for time,line in data.trend %}
+    <tr>
+      <th> {{time|date("Y/m/d H時")}} </th>
+      <td> {{line.today}} </td>
+      <td> {{line.yesterday}} </td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
 {% endblock %}
