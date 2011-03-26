@@ -10,7 +10,6 @@ class DataController extends Controller
   {
     $cache = $this->container->get('zend.cache_manager')->getCache('external');
     $data = $cache->load('data');
-    $data = null;
     if (!$data) {
       $capacity = null;
       /*
