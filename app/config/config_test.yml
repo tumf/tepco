@@ -12,3 +12,6 @@ web_profiler:
 zend:
     logger:
         priority: debug
+        
+behat: ~
+
