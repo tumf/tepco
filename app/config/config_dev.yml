@@ -16,3 +16,5 @@ zend:
 
 assetic:
     use_controller: true
+
+behat: ~
