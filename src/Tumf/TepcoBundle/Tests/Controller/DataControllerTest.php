@@ -1,6 +1,8 @@
 <?php
 namespace Tumf\TepcoBundle\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
 /**
  * Test of DataController
  *
@@ -10,6 +12,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class DataControllerTest extends WebTestCase
 {
+    public function testBehat()
+    {
+      $input = new ArgvInput(array("./app/console","behat:test:bundle","Tumf\\TepcoBundle","-f","progress"));
+      $application = new Application($this->createKernel());
+      $application->setAutoExit(false);
+      $this->assertEquals(0,$application->run($input));
+    }
     public function testIndex()
     {
         $client = $this->createClient();
