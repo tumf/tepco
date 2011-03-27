@@ -95,7 +95,7 @@
   <target name="phpdoc"
           description="Generate API documentation using PHPDocumentor">
     <exec executable="phpdoc">
-      <arg line="-d ${source} -t ${basedir}/build/api -i ${ignore}" />
+      <arg line="-d ${source} -t ${basedir}/build/api -i ${ignore} -i steps.php" />
     </exec>
     <exec executable="touch">
       <arg line="${basedir}/build/api/index.html" />
