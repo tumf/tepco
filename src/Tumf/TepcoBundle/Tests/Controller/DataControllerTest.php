@@ -1,15 +1,11 @@
 <?php
-/**
- */
-
 namespace Tumf\TepcoBundle\Tests\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
 /**
  * Test of DataController
- * @package tumf
- * @subpackage tepco
+ *
+ * @package tepco
+ * @subpackage test
  * @author Yoshihiro Takahara <y.takahara@gmail.com>
  */
 class DataControllerTest extends WebTestCase

@@ -97,11 +97,19 @@
     <exec executable="phpdoc">
       <arg line="-d ${source} -t ${basedir}/build/api -i ${ignore} -i steps.php" />
     </exec>
+    <!-- phpdoc が失敗したときの保険 -->
     <exec executable="touch">
       <arg line="${basedir}/build/api/index.html" />
     </exec>
   </target>
 
+  <target name="behat"
+          description="Behat BDD runner">
+    <exec executable="./app/console">
+      <arg line="behat:test:bundle Tumf\TepcoBundle -f junit --out build/logs" />
+    </exec>
+  </target>
+  
   <target name="phpcb"
           description="Aggregate tool output with PHP_CodeBrowser">
     <exec executable="phpcb">
@@ -113,5 +121,5 @@
     </exec>
   </target>
 
-  <target name="build" depends="clean,parallelTasks,phpunit,phpcb"/>
+  <target name="build" depends="clean,parallelTasks,phpunit,phpcb,behat"/>
 </project>
