@@ -10,14 +10,11 @@ class DataController extends Controller
   {
     $cache = $this->container->get('zend.cache_manager')->getCache('external');
     $data = $cache->load('data');
+    if (in_array($this->container->get('kernel')->getEnvironment(), array('dev', 'test'))) {
+      $data = null;
+    }
     if (!$data) {
       $capacity = null;
-      /*
-      $html = file_get_contents("http://www.tepco.co.jp/en/forecast/html/index-e.html");
-      if(preg_match("/Today's Maximum Capacity&nbsp;:&nbsp;([\d,]+)&nbsp;/",$html,$m)){
-        $capacity = (int) implode(explode(",",$m[1]));
-      }
-      */
       $data = file_get_contents("http://www.tepco.co.jp/forecast/html/images/juyo-j.csv");
       $data = mb_convert_encoding($data,"UTF-8","SJIS");
 

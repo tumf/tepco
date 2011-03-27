@@ -24,19 +24,19 @@
   <php>
     <server name="KERNEL_DIR" value="app/" />
   </php>
-
   <filter>
       <whitelist>
-          <directory>../src</directory>
+          <directory>../src/Tumf</directory>
+  <!--
           <exclude>
               <directory>../src/*/*Bundle/Resources</directory>
               <directory>../src/*/*Bundle/Tests</directory>
               <directory>../src/*/Bundle/*Bundle/Resources</directory>
               <directory>../src/*/Bundle/*Bundle/Tests</directory>
           </exclude>
+  -->
       </whitelist>
   </filter>
-
   <logging>
     <log type="coverage-html" target="coverage" title="Name of Project"
          charset="UTF-8" yui="true" highlight="true"
