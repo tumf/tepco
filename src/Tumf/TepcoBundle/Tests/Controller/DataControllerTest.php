@@ -14,7 +14,10 @@ class DataControllerTest extends WebTestCase
 {
     public function testBehat()
     {
-      $input = new ArgvInput(array("./app/console","behat:test:bundle","Tumf\\TepcoBundle","-f","progress"));
+      $ns = explode("\\",__NAMESPACE__);
+      array_pop($ns);array_pop($ns);
+      
+      $input = new ArgvInput(array("./app/console","behat:test:bundle",implode("\\",$ns),"-f","progress"));
       $application = new Application($this->createKernel());
       $application->setAutoExit(false);
       $this->assertEquals(0,$application->run($input));
