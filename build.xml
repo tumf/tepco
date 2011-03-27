@@ -121,5 +121,5 @@
     </exec>
   </target>
 
-  <target name="build" depends="clean,parallelTasks,phpunit,phpcb,behat"/>
+  <target name="build" depends="clean,parallelTasks,phpunit,phpcb"/>
 </project>
