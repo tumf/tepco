@@ -106,7 +106,7 @@
   <target name="behat"
           description="Behat BDD runner">
     <exec executable="./app/console">
-      <arg line="behat:test:bundle Tumf\TepcoBundle -f junit --out build/logs" />
+      <arg line="behat:test:bundle Tumf\TepcoBundle -f progress" />
     </exec>
   </target>
   
