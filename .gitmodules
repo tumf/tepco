@@ -1,6 +1,3 @@
-[submodule "src/Acme/SymfonyanBundle"]
-	path = src/Acme/SymfonyanBundle
-	url = git://github.com/brtriver/SymfonyanBundle.git
 [submodule "vendor/zend"]
 	path = vendor/zend
 	url = git://github.com/tumf/zend.git
@@ -13,3 +10,9 @@
 [submodule "vendor/behat"]
 	path = vendor/behat
 	url = git://github.com/Behat/Behat.git
+[submodule "vendor/bundles/Tumf/PearBundle"]
+	path = vendor/bundles/Tumf/PearBundle
+	url = git://github.com/tumf/PearBundle.git
+[submodule "vendor/bundles/Acme/SymfonyanBundle"]
+	path = vendor/bundles/Acme/SymfonyanBundle
+	url = git://github.com/brtriver/SymfonyanBundle.git
