@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Tumf\TepcoBundle\TumfTepcoBundle(),
             new Bundle\ZendCacheBundle\ZendCacheBundle(),
             new Acme\SymfonyanBundle\SymfonyanBundle(),
+            new Tumf\PearBundle\PearBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

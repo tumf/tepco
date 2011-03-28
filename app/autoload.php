@@ -15,12 +15,13 @@ $loader->registerNamespaces(array(
     'Doctrine'                       => __DIR__.'/../vendor/doctrine/lib',
     'Zend\\Log'                      => __DIR__.'/../vendor/zend-log',
     'Assetic'                        => __DIR__.'/../vendor/assetic/src',
-    'Tumf'                           => __DIR__.'/../src',
+    'Tumf\\TepcoBundle'              => __DIR__.'/../src',
     'Bundle\\ZendCacheBundle'        => __DIR__.'/../src',
     'Behat\\Gherkin'        => __DIR__.'/../vendor/gherkin/src',
     'Behat\\Behat'          => __DIR__.'/../vendor/behat/src',
     'Behat\\BehatBundle'    => __DIR__.'/../vendor/bundles',    
     'Acme'                  => __DIR__.'/../vendor/bundles',    
+    'Tumf\\PearBundle'      => __DIR__.'/../vendor/bundles',    
 ));
 
 $loader->registerPrefixes(array(
