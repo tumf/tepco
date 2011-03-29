@@ -8,6 +8,10 @@ class DataController extends Controller
 {
   public function indexAction($_format)
   {
+    $mm = new \Acme_MorningMusume;
+    var_dump($mm->members);
+    
+    
     $cache = $this->container->get('zend.cache_manager')->getCache('external');
     $data = $cache->load('data');
     if (in_array($this->container->get('kernel')->getEnvironment(), array('dev', 'test'))) {

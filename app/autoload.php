@@ -29,6 +29,7 @@ $loader->registerPrefixes(array(
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
     'Swift_'           => __DIR__.'/../vendor/swiftmailer/lib/classes',
     'Zend_Cache_'                            => __DIR__.'/../vendor/zend/library/Zend/Cache',
+    'Acme_'                            => __DIR__.'/../vendor/pear/php',
 ));
 $loader->register();
 
@@ -36,4 +37,4 @@ $loader->register();
 set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__.'/../vendor/zend/library');
 require_once(__DIR__.'/../vendor/zend/library/Zend/Cache/Manager.php');
 
-set_include_path(get_include_path() . PATH_SEPARATOR.__DIR__.'/../vendor/pear');
+set_include_path(get_include_path() . PATH_SEPARATOR.__DIR__.'/../vendor/pear/php');
