@@ -4,3 +4,6 @@ if [ ! -f .phper.deployed ] ; then
   true
 fi
 
+echo "deploy"
+echo $DSN
+
