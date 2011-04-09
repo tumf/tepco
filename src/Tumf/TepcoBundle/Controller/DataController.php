@@ -23,9 +23,12 @@ class DataController extends Controller
       array_shift($lines);
       $caps = explode(",",array_shift($lines));
       $capacity = (int) $caps[0];
+
+      $headers = array();
+      do {
+        $headers = explode(",",array_shift($lines));
+      }while($headers[0] != "DATE");
       
-      $headers = explode(",",array_shift($lines));
-      array_shift($lines);
       $trend = array();
     
       foreach($lines as $line){
